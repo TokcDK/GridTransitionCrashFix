@@ -19,7 +19,6 @@ namespace GridTrasitionCrashFix
 
         public static void RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state)
         {
-            TranslatedString.DefaultLanguage = Language.Russian;
             foreach (var questGetter in state.LoadOrder.PriorityOrder.WinningOverrides<IQuestGetter>())
             {
                 try
