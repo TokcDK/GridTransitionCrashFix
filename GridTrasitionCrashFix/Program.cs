@@ -91,7 +91,7 @@ namespace GridTrasitionCrashFix
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
-                    System.Console.WriteLine("Failed to parse record '" + questGetter.Name + "', edid: '" + questGetter.EditorID + "' Error: \r\n" + ex + "\r\n\r\n");
+                    Console.WriteLine("Failed to parse record '" + questGetter.EditorID + "' (" + questGetter.Name + ") Error: \r\n" + ex + "\r\n\r\n");
                 }
             }
         }
