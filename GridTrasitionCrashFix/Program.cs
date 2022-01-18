@@ -1,5 +1,6 @@
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Skyrim;
+using Mutagen.Bethesda.Strings;
 using Mutagen.Bethesda.Synthesis;
 using System;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace GridTrasitionCrashFix
 
         public static void RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state)
         {
+            TranslatedString.DefaultLanguage = Language.Russian;
             foreach (var questGetter in state.LoadOrder.PriorityOrder.WinningOverrides<IQuestGetter>())
             {
                 try
