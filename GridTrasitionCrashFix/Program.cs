@@ -22,8 +22,8 @@ namespace GridTrasitionCrashFix
         {
             foreach (var questGetter in state.LoadOrder.PriorityOrder.WinningOverrides<IQuestGetter>())
             {
-                try
-                {
+                //try
+                //{
                     bool wasChanged = false;
                     Quest questCopy = questGetter.DeepCopy();
                     foreach (var questAlias in questCopy.Aliases)
@@ -90,11 +90,11 @@ namespace GridTrasitionCrashFix
 
                     if (wasChanged)
                         state.PatchMod.Quests.Add(questCopy);
-                }
-                catch
-                {
+                //}
+                //catch
+                //{
 
-                }
+                //}
             }
         }
     }
