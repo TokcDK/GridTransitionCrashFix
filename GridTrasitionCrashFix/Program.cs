@@ -1,9 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Mutagen.Bethesda;
-using Mutagen.Bethesda.Synthesis;
 using Mutagen.Bethesda.Skyrim;
+using Mutagen.Bethesda.Synthesis;
+using System;
 using System.Threading.Tasks;
 
 namespace GridTrasitionCrashFix
@@ -22,8 +20,8 @@ namespace GridTrasitionCrashFix
         {
             foreach (var questGetter in state.LoadOrder.PriorityOrder.WinningOverrides<IQuestGetter>())
             {
-                //try
-                //{
+                try
+                {
                     bool wasChanged = false;
                     Quest questCopy = questGetter.DeepCopy();
                     foreach (var questAlias in questCopy.Aliases)
@@ -90,11 +88,11 @@ namespace GridTrasitionCrashFix
 
                     if (wasChanged)
                         state.PatchMod.Quests.Add(questCopy);
-                //}
-                //catch
-                //{
-
-                //}
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    System.Console.WriteLine("Failed to parse record '" + questGetter.Name + "', edid: '" + questGetter.EditorID + "' Error: \r\n" + ex + "\r\n\r\n");
+                }
             }
         }
     }
