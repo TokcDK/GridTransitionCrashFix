@@ -12,7 +12,7 @@ namespace GridTrasitionCrashFix
         {
             return await SynthesisPipeline.Instance
                 .AddPatch<ISkyrimMod, ISkyrimModGetter>(RunPatch)
-                .SetTypicalOpen(GameRelease.SkyrimLE, "TransitionCrashFix.esp")
+                .SetTypicalOpen(GameRelease.SkyrimSE, "TransitionCrashFix.esp")
                 .Run(args);
         }
 
