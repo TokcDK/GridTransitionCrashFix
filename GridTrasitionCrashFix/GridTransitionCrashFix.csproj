@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mutagen.Bethesda" Version="0.34.1" />
-    <PackageReference Include="Mutagen.Bethesda.Synthesis" Version="0.21.4" />
+    <PackageReference Include="Mutagen.Bethesda" Version="0.39.3" />
+    <PackageReference Include="Mutagen.Bethesda.Synthesis" Version="0.23.7" />
   </ItemGroup>
 </Project>
