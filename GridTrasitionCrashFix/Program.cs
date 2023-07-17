@@ -29,7 +29,7 @@ namespace GridTrasitionCrashFix
                         for (int i = questAlias.Conditions.Count - 1; i >= 0; --i)
                         {
                             var currCond = questAlias.Conditions[i];
-                            if (currCond is ConditionFloat condFloat && condFloat.Data is FunctionConditionData condData && condData.Function == Condition.Function.GetInCurrentLocAlias)
+                            if (currCond is ConditionFloat condFloat && condFloat.Data is IGetBaseActorValueConditionDataGetter condData && condData.Function == Condition.Function.GetInCurrentLocAlias)
                             {
                                 if (condFloat.Flags.HasFlag(Condition.Flag.OR))
                                 {
